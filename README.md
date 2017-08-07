@@ -16,15 +16,8 @@ Then, open `client.py` in the `test` directory and put your client id and client
 
 	client_id = "YOUR_CLIENT_ID"
 	client_secret = "YOUR_CLIENT_SECRET"
-	auth_code = "YOUR_AUTH_CODE"
 
-And then run the test `authTest.py`. If the running success, it will return you an URL.
-
-Browse your URL and log in KKBOX, then you can obtain your auth code.
-
-    http://localhost/?code=_YOUR_AUTH_CODE_&state=1234
-
-Follow the steps as client id and client secret, put your auth code in `client.py`.
+And then you can run the tests.	
 
 ## How to use the SDK
 
