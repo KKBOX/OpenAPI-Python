@@ -9,6 +9,7 @@ try:
     # Python 3
     import urllib.parse as url_parse
     import urllib.request as url_request
+    import functools
 except:
     # Python 2
     import urllib as url_parse

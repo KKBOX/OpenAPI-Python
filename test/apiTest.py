@@ -15,10 +15,12 @@ class TestAPISDK(unittest.TestCase):
         for key in keys:
             assert key in image, 'missing key ' + key        
 
+    '''
     def _validate_paging(self, paging):
         keys = ('offset', 'limit', 'previous', 'next')
         for key in keys:
             assert key in paging, 'missing key ' + key
+    '''
 
     def _validate_artist(self, artist):
         keys = ('id', 'name', 'url', 'images')
@@ -26,8 +28,6 @@ class TestAPISDK(unittest.TestCase):
             assert key in artist, 'missing key ' + key
         for image in artist['images']:
             self._validate_image(image)
-        if 'paging' in artist:
-            self._validate_paging(artist['paging'])
 
     def _validate_album(self, album):
         keys = ('id', 'name', 'url', 'explicitness', 'available_territories', 'images')
@@ -37,8 +37,6 @@ class TestAPISDK(unittest.TestCase):
             self._validate_image(image)
         if 'artist' in album:
             self._validate_artist(album['artist'])
-        if 'paging' in album:
-            self._validate_paging(album['paging'])
 
     def _validate_track(self, track):
         keys = ('id', 'name', 'url', 'track_number', 'explicitness', 'available_territories')
@@ -47,7 +45,8 @@ class TestAPISDK(unittest.TestCase):
         if 'album' in track:
             self._validate_album(track['album'])
         if 'paging' in track:
-            self._validate_paging(track['paging'])
+            assert 'offset', 'limit' in track['paging']
+            assert 'previous', 'next' in track['paging']
 
     def _validate_playlist(self, playlist):
         keys = ('id', 'title', 'description', 'url', 'images', 'owner')
@@ -61,7 +60,8 @@ class TestAPISDK(unittest.TestCase):
             for track in playlist['tracks']['data']:
                 self._validate_track(track)
         if 'paging' in playlist:
-            self._validate_paging(playlist['paging'])
+            assert 'offset', 'limit' in playlist['paging']
+            assert 'previous', 'next' in playlist['paging']
 
     def test_fetch_track(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -126,7 +126,7 @@ class TestAPISDK(unittest.TestCase):
     def test_search(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
         sdk.fetch_access_token_by_client_credentials()
-        results = sdk.search('Zonble',
+        results = sdk.search('BTS',
                              [KKBOXSearchTypes.ARTIST, KKBOXSearchTypes.ALBUM,
                               KKBOXSearchTypes.TRACK,
                               KKBOXSearchTypes.PLAYLIST])
@@ -152,6 +152,9 @@ class TestAPISDK(unittest.TestCase):
             assert key in charts, 'missing key ' + key
         for chart in charts['data']:
             self._validate_playlist(chart)
+        for paging in charts['paging']:
+            assert 'offset', 'limit' in charts['paging']
+            assert 'previous', 'next' in charts['paging']
 
     def test_fetch_new_release_categories(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -164,6 +167,9 @@ class TestAPISDK(unittest.TestCase):
             keys = ('id', 'title')
             for key in keys:
                 assert key in category
+        for paging in categories['paging']:
+            assert 'offset', 'limit' in categories['paging']
+            assert 'previous', 'next' in categories['paging']
 
     def test_fetch_new_release_category(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -191,11 +197,13 @@ class TestAPISDK(unittest.TestCase):
         keys = ('paging', 'data', 'summary')
         for key in keys:
             assert key in stations, 'missing key ' + key
-        data = stations['data']
-        for station in data:
+        for station in stations['data']:
             keys = ('category', 'id', 'name')
             for key in keys:
                 assert key in station
+        for paging in stations['paging']:
+            assert 'offset', 'limit' in stations['paging']
+            assert 'previous', 'next' in stations['paging']
 
     def test_fetch_genre_station(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -216,15 +224,15 @@ class TestAPISDK(unittest.TestCase):
         keys = ('paging', 'data', 'summary')
         for key in keys:
             assert key in stations, 'missing key ' + key
-        data = stations['data']
-        for station in data:
+        for station in stations['data']:
             keys = ('images', 'id', 'name')
             for key in keys:
                 assert key in station, 'missing key ' + key
             for image in station['images']:
-                keys = ('url', 'width', 'height')
-                for key in keys:
-                    assert key in image, 'missing key ' + key
+                self._validate_image(image)
+        for paging in stations['paging']:
+            assert 'offset', 'limit' in stations['paging']
+            assert 'previous', 'next' in stations['paging']
 
     def test_fetch_mood_station(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -256,13 +264,15 @@ class TestAPISDK(unittest.TestCase):
         keys = ('paging', 'data', 'summary')
         for key in keys:
             assert key in feature_playlists, 'missing key ' + key
-        data = feature_playlists['data']
-        for playlist in data:
+        for playlist in feature_playlists['data']:
             keys = ('id', 'title', 'description', 'url', 'images')
             for key in keys:
                 assert key in playlist, 'missing key ' + key
             for image in playlist['images']:
                 self._validate_image(image)
+        for paging in feature_playlists['paging']:
+            assert 'offset', 'limit' in feature_playlists['paging']
+            assert 'previous', 'next' in feature_playlists['paging']
 
     def test_fetch_categories_of_feature_playlist(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -271,13 +281,15 @@ class TestAPISDK(unittest.TestCase):
         keys = ('paging', 'data', 'summary')
         for key in keys:
             assert key in categories, 'missing key ' + key
-        data = categories['data']
-        for category in data:
+        for category in categories['data']:
             keys = ('id', 'title', 'images')
             for key in keys:
                 assert key in category, 'missing key ' + key
             for image in category['images']:
                 self._validate_image(image)
+        for paging in categories['paging']:
+            assert 'offset', 'limit' in categories['paging']
+            assert 'previous', 'next' in categories['paging']
 
     def test_fetch_feature_playlist_by_category(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -293,16 +305,18 @@ class TestAPISDK(unittest.TestCase):
             self._validate_playlist(playlist)
 
     def test_fetch_playlists_of_feature_playlist_category(self):
-       sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
-       sdk.fetch_access_token_by_client_credentials()
-       category_id = '9XQKD8BJx595ESs_rb'
-       category = sdk.fetch_playlists_of_feature_playlist_category(category_id)
-       keys = ('paging', 'data', 'summary')
-       for key in keys:
-           assert key in category, 'missing key ' + key
-       data = category['data']
-       for playlist in data:
-           self._validate_playlist(playlist)
+        sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
+        sdk.fetch_access_token_by_client_credentials()
+        category_id = '9XQKD8BJx595ESs_rb'
+        category = sdk.fetch_playlists_of_feature_playlist_category(category_id)
+        keys = ('paging', 'data', 'summary')
+        for key in keys:
+            assert key in category, 'missing key ' + key
+        for playlist in category['data']:
+            self._validate_playlist(playlist)
+        for paging in category['paging']:
+            assert 'offset', 'limit' in category['paging']
+            assert 'previous', 'next' in category['paging']
 
     def test_fetch_all_new_hits_playlists(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
@@ -311,9 +325,11 @@ class TestAPISDK(unittest.TestCase):
         keys = ('paging', 'data', 'summary')
         for key in keys:
             assert key in new_hits, 'missing key ' + key
-        playlists = new_hits['data']
-        for playlist in playlists:
+        for playlist in new_hits['data']:
             self._validate_playlist(playlist)
+        for paging in new_hits['paging']:
+            assert 'offset', 'limit' in new_hits['paging']
+            assert 'previous', 'next' in new_hits['paging']
 
     def test_fetch_new_hits_playlist(self):
         sdk = KKBOXSDK(CLIENT_ID, CLIENT_SECRET)
