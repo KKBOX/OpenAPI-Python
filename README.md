@@ -27,3 +27,4 @@ After obtaining a valid access token, you may call APIs like this:
 	artist = sdk.fetch_artist(artist_id)
 
 For further information, please visit [API Documentation](https://docs.kkbox.codes).
+# kkbox_openapi_developer_sdk
