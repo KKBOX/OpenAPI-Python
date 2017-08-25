@@ -7,7 +7,7 @@ Installer for KKBOX SDK
 from distutils.core import setup
 
 setup(name='kkbox_sdk',
-      description='kkbox_sdk',
+      description='KKBOX Open API SDK for Python',
       author='Sharon Yang',
       author_email='sharonyang@kkbox.com',
       version='1.1',
