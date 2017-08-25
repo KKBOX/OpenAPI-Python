@@ -1,16 +1,9 @@
-KKBOX Open/Partner API
+KKBOX Open API Developer SDK
 ======================
+.. toctree::
+    :maxdepth: 2
 
-
-.. autoclass:: kkbox_sdk.KKBOXSDK
-	:members:
-
-.. autoclass:: kkbox_sdk.KKBOXAccessToken
-	:members:
-
-.. autoclass:: kkbox_sdk.KKBOXDeviceCode
-	:members:
-
+    README.md
 
 Indices and tables
 ==================
