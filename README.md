@@ -33,4 +33,4 @@ After obtaining the access token, you may call APIs like this:
 	artist_id = '8q3_xzjl89Yakn_7GB'
 	artist = sdk.artist_fetcher.fetch_artist(artist_id)
 	
-### [API Documentation](https://docs.kkbox.codes/docs)
+### [API Documentation](https://kkbox.gelato.io/)
