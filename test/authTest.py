@@ -4,7 +4,7 @@
 import unittest
 import sys
 from os import path
-sys.path.append( path.dirname( path.dirname( path.abspath(__file__) ) ) )
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 from kkbox_developer_sdk.auth_flow import *
 from client import ClientInfo
 
