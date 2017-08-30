@@ -15,9 +15,6 @@ from mood_station_fetcher import *
 from feature_playlist_fetcher import *
 from feature_playlist_category_fetcher import *
 from new_hits_playlist_fetcher import *
-from user_fetcher import *
-from me_fetcher import *
-from ticket_fetcher import *
 
 
 class KKBOXAPI:
@@ -49,9 +46,4 @@ class KKBOXAPI:
         self.feature_playlist_category_fetcher = KKBOXFeaturePlaylistCategoryFetcher(access_token)
         #: The new hits playlist related API fetcher
         self.new_hits_playlist_fetcher = KKBOXNewHitsPlaylistFetcher(access_token)
-        #: The user related API fetcher
-        self.user_fetcher = KKBOXUserFetcher(access_token)
-        #: The me related API fetcher
-        self.me_fetcher = KKBOXMeFetcher(access_token)
-        #: The ticket related API fetcher
-        self.ticket_fetcher = KKBOXTicketFetcher(access_token)
+

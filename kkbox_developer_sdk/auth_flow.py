@@ -11,8 +11,6 @@ class KKBOXOAuth:
     '''
 
     OAUTH_TOKEN_URL = 'https://account.kkbox.com/oauth2/token'
-    OAUTH_TOKEN_INFO_URL = 'https://account.kkbox.com/oauth2/tokeninfo'
-    OAUTH_AUTH_URL = 'https://account.kkbox.com/oauth2/authorize'
 
     def __init__(self, client_id, client_secret):
         #: The client ID

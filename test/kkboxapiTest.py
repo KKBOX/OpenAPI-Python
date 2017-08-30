@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-import sys
 import inspect
-import os
-file_path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-sdk_path = file_path + '/../kkbox_sdk'
-sys.path.append(sdk_path)
+import unittest
+import sys
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 from client import ClientInfo
-from api import *
+from kkbox_developer_sdk.auth_flow import *
+from kkbox_developer_sdk.api import *
 
 CLIENT_ID = ClientInfo.client_id
 CLIENT_SECRET = ClientInfo.client_secret
-AUTH_CODE = ClientInfo.auth_code
 
 class TestSDK(unittest.TestCase):
 
@@ -24,11 +23,11 @@ class TestSDK(unittest.TestCase):
         properties = []
         for (property, _) in attributes:
             properties.append(property)
-        members = ('http', 'search_fetcher', 'track_fetcher',
-        'artist_fetcher', 'album_fetcher', 'shared_playlist_fetcher',
-        'chart_fetcher', 'new_release_category_fetcher', 'genre_station_fetcher',
-        'mood_station_fetcher', 'feature_playlist_fetcher', 'feature_playlist_category_fetcher',
-        'new_hits_playlist_fetcher')
+        members = ('search_fetcher', 'track_fetcher', 'artist_fetcher', 
+                   'album_fetcher', 'shared_playlist_fetcher', 'chart_fetcher',
+                   'new_release_category_fetcher', 'genre_station_fetcher',
+                   'mood_station_fetcher', 'feature_playlist_fetcher', 
+                   'feature_playlist_category_fetcher', 'new_hits_playlist_fetcher')
         for member in members:
             assert member in properties, 'missing member ' + member
 

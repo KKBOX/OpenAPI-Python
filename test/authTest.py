@@ -1,18 +1,15 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import unittest
 import sys
-import inspect
-import os
-file_path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-sdk_path = file_path + '/../kkbox_sdk'
-sys.path.append(sdk_path)
-from auth_flow import *
+from os import path
+sys.path.append( path.dirname( path.dirname( path.abspath(__file__) ) ) )
+from kkbox_developer_sdk.auth_flow import *
 from client import ClientInfo
 
 CLIENT_ID = ClientInfo.client_id
 CLIENT_SECRET = ClientInfo.client_secret
-AUTH_CODE = ClientInfo.auth_code
 
 
 class TestAuthSDK(unittest.TestCase):

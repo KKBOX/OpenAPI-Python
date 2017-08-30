@@ -1,31 +1,27 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import unittest
 import sys
-
-import inspect
-import os
-file_path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-sdk_path = file_path + '/../kkbox_sdk'
-sys.path.append(sdk_path)
-from track_fetcher import *
-from artist_fetcher import *
-from album_fetcher import *
-from shared_playlist_fetcher import *
-from search_fetcher import *
-from chart_fetcher import *
-from new_release_category_fetcher import *
-from genre_station_fetcher import *
-from mood_station_fetcher import *
-from feature_playlist_fetcher import *
-from feature_playlist_category_fetcher import *
-from new_hits_playlist_fetcher import *
-from auth_flow import *
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+from kkbox_developer_sdk.track_fetcher import *
+from kkbox_developer_sdk.artist_fetcher import *
+from kkbox_developer_sdk.album_fetcher import *
+from kkbox_developer_sdk.shared_playlist_fetcher import *
+from kkbox_developer_sdk.search_fetcher import *
+from kkbox_developer_sdk.chart_fetcher import *
+from kkbox_developer_sdk.new_release_category_fetcher import *
+from kkbox_developer_sdk.genre_station_fetcher import *
+from kkbox_developer_sdk.mood_station_fetcher import *
+from kkbox_developer_sdk.feature_playlist_fetcher import *
+from kkbox_developer_sdk.feature_playlist_category_fetcher import *
+from kkbox_developer_sdk.new_hits_playlist_fetcher import *
+from kkbox_developer_sdk.auth_flow import *
 from client import ClientInfo
 
 CLIENT_ID = ClientInfo.client_id
 CLIENT_SECRET = ClientInfo.client_secret
-AUTH_CODE = ClientInfo.auth_code
 
 class TestAPISDK(unittest.TestCase):
 	
