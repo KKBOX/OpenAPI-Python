@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
-'''
-SDK for KKBOX's Open/Partner API. https://docs.kkbox.codes
-'''
-
 from fetcher import *
 from territory import *
-
 
 class KKBOXChartFetcher(Fetcher):
     '''
@@ -15,13 +9,6 @@ class KKBOXChartFetcher(Fetcher):
 
     See `https://docs.kkbox.codes/docs/charts`.
     '''
-    @property
-    def access_token(self):
-        return self.http.access_token
-
-    def __init__(self, access_token):
-        self.http = KKBOXHTTP(access_token)
-
     @assert_access_token
     def fetch_charts(self, terr=KKBOXTerritory.TAIWAN):
         '''

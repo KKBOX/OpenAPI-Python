@@ -18,7 +18,12 @@ class Fetcher:
     '''
     Base class for various fetchers.
     '''
+    @property
+    def access_token(self):
+        return self.http.access_token
+
     def __init__(self, access_token):
+        #: The http client
         self.http = KKBOXHTTP(access_token)
     
     def fetch_next_page(self, data):

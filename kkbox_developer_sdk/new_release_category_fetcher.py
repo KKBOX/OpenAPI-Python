@@ -1,27 +1,14 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
-'''
-SDK for KKBOX's Open/Partner API. https://docs.kkbox.codes
-'''
-
 from fetcher import *
 from territory import *
 
-
 class KKBOXNewReleaseCategoryFetcher(Fetcher):
     '''
-    List categories of new release albums.
+    List categories of new release category and get metadata of specific new release category.
 
     See `https://docs.kkbox.codes/docs/new-release-categories`.
     '''
-    @property
-    def access_token(self):
-        return self.http.access_token
-
-    def __init__(self, access_token):
-        self.http = KKBOXHTTP(access_token)
-
     @assert_access_token
     def fetch_all_new_release_categories(self, terr=KKBOXTerritory.TAIWAN):
         '''

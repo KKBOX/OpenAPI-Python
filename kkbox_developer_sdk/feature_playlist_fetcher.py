@@ -1,27 +1,14 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
-'''
-SDK for KKBOX's Open/Partner API. https://docs.kkbox.codes
-'''
-
 from fetcher import *
 from territory import *
 
-
 class KKBOXFeaturePlaylistFetcher(Fetcher):
     '''
-    List all featured playlists.
+    List all featured playlists metadata.
 
     See `https://docs.kkbox.codes/docs/featured-playlists`.
     '''
-    @property
-    def access_token(self):
-        return self.http.access_token
-
-    def __init__(self, access_token):
-        self.http = KKBOXHTTP(access_token)
-
     @assert_access_token
     def fetch_feature_playlists(self, terr=KKBOXTerritory.TAIWAN):
         '''

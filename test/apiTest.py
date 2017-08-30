@@ -21,7 +21,6 @@ from feature_playlist_fetcher import *
 from feature_playlist_category_fetcher import *
 from new_hits_playlist_fetcher import *
 from auth_flow import *
-from device_flow import *
 from client import ClientInfo
 
 CLIENT_ID = ClientInfo.client_id

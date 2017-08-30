@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
-'''
-SDK for KKBOX's Open/Partner API. https://docs.kkbox.codes
-'''
-
 from fetcher import *
 from territory import *
-
 
 class KKBOXTrackFetcher(Fetcher):
     '''
@@ -15,13 +9,6 @@ class KKBOXTrackFetcher(Fetcher):
 
     See `https://docs.kkbox.codes/docs/tracks`.
     '''
-    @property
-    def access_token(self):
-        return self.http.access_token
-
-    def __init__(self, access_token):
-        self.http = KKBOXHTTP(access_token)
-
     @assert_access_token
     def fetch_track(self, track_id, terr=KKBOXTerritory.TAIWAN):
         '''

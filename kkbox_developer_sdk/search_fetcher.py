@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
-'''
-SDK for KKBOX's Open/Partner API. https://docs.kkbox.codes
-'''
-
 from fetcher import *
 from territory import *
-
 
 class KKBOXSearchTypes:
     '''
@@ -20,17 +14,12 @@ class KKBOXSearchTypes:
 
 class KKBOXSearchFetcher(Fetcher):
     '''
-    Search API.
+    Search API, the types it can search includes artists, albums, tracks, or playlists.
+    Default to search all types, use "," to seperate types if you want to use multiple 
+    types to search at the same time.
 
     See `https://docs.kkbox.codes/docs/search`.
     '''
-    @property
-    def access_token(self):
-        return self.http.access_token
-
-    def __init__(self, access_token):
-        self.http = KKBOXHTTP(access_token)
-
     @assert_access_token
     def search(self, keyword, types=[], terr=KKBOXTerritory.TAIWAN):
         '''

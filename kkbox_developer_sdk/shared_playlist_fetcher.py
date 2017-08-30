@@ -1,27 +1,14 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
-'''
-SDK for KKBOX's Open/Partner API. https://docs.kkbox.codes
-'''
-
 from fetcher import *
 from territory import *
 
-
 class KKBOXSharedPlaylistFetcher(Fetcher):
     '''
-    Get plylist metadata.
+    Fetch metadata and tracks of a specific shared playlist.
 
     See `https://docs.kkbox.codes/docs/shared-playlists`.
     '''
-    @property
-    def access_token(self):
-        return self.http.access_token
-
-    def __init__(self, access_token):
-        self.http = KKBOXHTTP(access_token)
-
     @assert_access_token
     def fetch_shared_playlist(self, playlist_id, terr=KKBOXTerritory.TAIWAN):
         '''

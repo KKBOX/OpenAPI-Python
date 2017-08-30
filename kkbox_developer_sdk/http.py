@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 # encoding: utf-8
-
-'''
-SDK for KKBOX's Open/Partner API. https://docs.kkbox.codes
-'''
-
 try:
     # Python 3
     import urllib.parse as url_parse
@@ -17,8 +12,6 @@ except:
     import functools
 import base64
 import json
-
-import unittest
 
 class KKBOXHTTP:    
     '''
