@@ -24,13 +24,26 @@ And then we can run the tests.
 
 First we have to obtain the access token.
 
+	from kkbox_developer_sdk.auth_flow import KKBOXOAuth
 	auth = KKBOXOAuth(CLIENT_ID, CLIENT_SECRET)
 	token = auth.fetch_access_token_by_client_credentials()
 
 After obtaining the access token, you may call APIs like this:
 
-	sdk = KKBOXSDK(token)
+	from kkbox_partner_sdk.api import KKBOXAPI
+	kkboxapi = KKBOXSDK(token)
 	artist_id = '8q3_xzjl89Yakn_7GB'
-	artist = sdk.artist_fetcher.fetch_artist(artist_id)
+	artist = kkboxapi.artist_fetcher.fetch_artist(artist_id)
+
+## Generate the SDK documentation
+The SDK documentation depends on Sphinx and recommonmark, so first you have to install them.
+
+	pip install Sphinx recommonmark
+
+Then generate documentation by sphinx:
+
+	sphinx-apidoc -o doc -f kkbox_developer_sdk
+	cd doc
+	make html
 	
 ### [API Documentation](https://kkbox.gelato.io/)
