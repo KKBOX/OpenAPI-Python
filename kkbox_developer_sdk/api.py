@@ -2,7 +2,6 @@
 # encoding: utf-8
 
 from auth_flow import *
-from device_flow import *
 from track_fetcher import *
 from artist_fetcher import *
 from album_fetcher import *
