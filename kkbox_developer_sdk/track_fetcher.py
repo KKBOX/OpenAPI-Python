@@ -7,7 +7,7 @@ class KKBOXTrackFetcher(Fetcher):
     '''
     Get metadata of a track.
 
-    See `https://docs.kkbox.codes/docs/tracks`.
+    See `https://kkbox.gelato.io/docs/versions/1.1/resources/tracks`.
     '''
     @assert_access_token
     def fetch_track(self, track_id, terr=KKBOXTerritory.TAIWAN):
@@ -19,7 +19,7 @@ class KKBOXTrackFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://docs.kkbox.codes/docs/tracks`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/resources/tracks/endpoints/get-tracks-track_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/tracks/%s' % track_id
         url += '?' + url_parse.urlencode({'territory': terr})

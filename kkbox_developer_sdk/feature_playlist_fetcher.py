@@ -7,7 +7,7 @@ class KKBOXFeaturePlaylistFetcher(Fetcher):
     '''
     List all featured playlists metadata.
 
-    See `https://docs.kkbox.codes/docs/featured-playlists`.
+    See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlists`.
     '''
     @assert_access_token
     def fetch_feature_playlists(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXFeaturePlaylistFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://docs.kkbox.codes/docs/featured-playlists`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlists/endpoints/get-featured-playlists`.
         '''
         url = 'https://api.kkbox.com/v1.1/featured-playlists'
         url += '?' + url_parse.urlencode({'territory': terr})

@@ -7,7 +7,7 @@ class KKBOXOAuth:
     '''
     Implements various KKBOX Oauth 2.0 authorization flows.
 
-    See `https://docs.kkbox.codes/docs/authorization-code-flow`.
+    See `https://kkbox.gelato.io/docs/versions/1.1/authentication`.
     '''
 
     OAUTH_TOKEN_URL = 'https://account.kkbox.com/oauth2/token'
@@ -41,8 +41,7 @@ class KKBOXOAuth:
         :return: an access token
         :rtype: :class:`kkbox_sdk.KKBOXAccessToken`
 
-        See `https://docs.kkbox.codes/docs/client-credentials-flow` and
-        `https://docs.kkbox.codes/docs/kkbox-oauth-20-token-api`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/authentication`.
         '''
         client_credential_base = '%s:%s' % (self.client_id, self.client_secret)
         try:

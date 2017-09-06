@@ -7,7 +7,7 @@ class KKBOXNewHitsPlaylistFetcher(Fetcher):
     '''
     List all new hits playlists and fetch tracks for specific new hit playlist.
 
-    See 'https://docs.kkbox.codes/docs/new-hits-playlists'.
+    See 'https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists'.
     '''
     @assert_access_token
     def fetch_all_new_hits_playlists(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXNewHitsPlaylistFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See 'https://docs.kkbox.codes/docs/new-hits-playlists'
+        See 'https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists/endpoints/get-new-hits-playlists'
         '''
         url = 'https://api.kkbox.com/v1.1/new-hits-playlists'
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -35,7 +35,7 @@ class KKBOXNewHitsPlaylistFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See 'https://docs.kkbox.codes/docs/new-hits-playlists-playlist-id'
+        See 'https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists/endpoints/get-new-hits-playlists-playlist_id'
         '''
         url = 'https://api.kkbox.com/v1.1/new-hits-playlists/%s' % playlist_id
         url += '?' + url_parse.urlencode({'territory': terr})

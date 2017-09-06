@@ -7,7 +7,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
     '''
     List feature playlist categories and list feature playlists for a specific category.
 
-    See `https://docs.kkbox.codes/docs/featured-playlist-categories`.
+    See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories`.
     '''
     @assert_access_token
     def fetch_categories_of_feature_playlist(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://docs.kkbox.codes/docs/featured-playlist-categories`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories`.
         '''
         url = 'https://api.kkbox.com/v1.1/featured-playlist-categories'
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -35,7 +35,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://docs.kkbox.codes/docs/feature-playlist-category`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories-category_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/featured-playlist-categories/%s' % category_id
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -52,7 +52,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://docs.kkbox.codes/docs/featured-playlist-categoriescategoriesplaylists`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories-category_id-playlists`.
         '''
         url = 'https://api.kkbox.com/v1.1/featured-playlist-categories/%s/playlists' % category_id
         url += '?' + url_parse.urlencode({'territory': terr})

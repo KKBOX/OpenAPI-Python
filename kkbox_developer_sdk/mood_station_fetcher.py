@@ -7,7 +7,7 @@ class KKBOXMoodStationFetcher(Fetcher):
     '''
     Fetch mood stations and get tracks for a specific mood station.
 
-    See `https://docs.kkbox.codes/docs/mood-stations-mood`.
+    See `https://kkbox.gelato.io/docs/versions/1.1/resources/mood-stations`.
     '''
     @assert_access_token
     def fetch_all_mood_stations(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXMoodStationFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://docs.kkbox.codes/docs/mood-stations-mood`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/resources/mood-stations/endpoints/get-mood-stations`.
         '''
         url = 'https://api.kkbox.com/v1.1/mood-stations'
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -34,7 +34,7 @@ class KKBOXMoodStationFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://docs.kkbox.codes/docs/mood-stations-station`.
+        See `https://kkbox.gelato.io/docs/versions/1.1/resources/mood-stations/endpoints/get-mood-stations-station_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/mood-stations/%s' % station_id
         url += '?' + url_parse.urlencode({'territory': terr})
