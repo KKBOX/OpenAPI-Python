@@ -10,7 +10,7 @@ The package works with Python 2 and Python 3.
 
 ### Test
 
-First, browse [KKBOX Developer Website](https://kkbox.gelato.io/) and create an developer account, and then contact chrisyuan or lance to get client secret for that account.
+First, contact vincentchiang or chrisyuan at KKBOX to get client id and client secret.
 
 Second, create `client.py` in the `test` directory and create a class named ClientInfo, and put your client id and client secret in it. The content will be like: 
 
