@@ -10,7 +10,7 @@ The package works with Python 2 and Python 3.
 
 ### Test
 
-First, contact vincentchiang or chrisyuan at KKBOX to get client id and client secret.
+First, go to https://developer.kkbox.com/ to get client id and client secret. If the site is unavailable, you can also contact vincentchiang or chrisyuan at KKBOX to get client id and client secret.
 
 Second, create `client.py` in the `test` directory and create a class named ClientInfo, and put your client id and client secret in it. The content will be like: 
 
