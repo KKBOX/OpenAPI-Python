@@ -18,6 +18,7 @@ build
 .idea
 .vscode
 *.rst
+.pypirc
 coverage.xml
 nosetests.xml
 client.py
