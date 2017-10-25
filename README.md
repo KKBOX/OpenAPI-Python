@@ -31,7 +31,7 @@ First we have to obtain the access token.
 After obtaining the access token, you may call APIs like this:
 
 	from kkbox_partner_sdk.api import KKBOXAPI
-	kkboxapi = KKBOXSDK(token)
+	kkboxapi = KKBOXAPI(token)
 	artist_id = '8q3_xzjl89Yakn_7GB'
 	artist = kkboxapi.artist_fetcher.fetch_artist(artist_id)
 
