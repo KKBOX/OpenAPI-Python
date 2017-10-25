@@ -8,7 +8,7 @@ from distutils.core import setup
 
 setup(name='kkbox_developer_sdk',
       description='KKBOX Open API Developer SDK for Python',
-      author='Sharon Yang',
+      author='KKBOX',
       author_email='sharonyang@kkbox.com',
       version='1.0.0',
       url='https://github.com/KKBOX/kkbox_openapi_developer_sdk',
