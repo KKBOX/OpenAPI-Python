@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>KKBOX OpenAPI SDK for Python &#8212; KKBOX Open/Partner API  documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="KKBOX Open API Developer SDK" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="KKBOX Open API Developer SDK"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">KKBOX Open/Partner API  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="kkbox-openapi-sdk-for-python">
+<span id="kkbox-openapi-sdk-for-python"></span><h1>KKBOX OpenAPI SDK for Python<a class="headerlink" href="#kkbox-openapi-sdk-for-python" title="Permalink to this headline">¶</a></h1>
+<p>The SDK is for accessing various metadata of KKBOX tracks, albums, artist, playlists and stations.</p>
+<div class="section" id="installation">
+<span id="installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p class="first">Source installation</p>
+<p>[sudo] python setup.py install</p>
+</li>
+<li><p class="first">Pypi installation</p>
+<p>pip install kkbox-developer-sdk</p>
+</li>
+</ol>
+<p>The package works with Python 2 and Python 3.</p>
+</div>
+<div class="section" id="test">
+<span id="test"></span><h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<p>First, go to https://developer.kkbox.com/ to get client id and client secret. If the site is unavailable, you can also contact vincentchiang or chrisyuan at KKBOX to get client id and client secret.</p>
+<p>Second, create <code class="docutils literal"><span class="pre">client.py</span></code> in the <code class="docutils literal"><span class="pre">test</span></code> directory and create a class named ClientInfo, and put your client id and client secret in it. The content will be like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClientInfo</span><span class="p">():</span>
+    <span class="n">client_id</span> <span class="o">=</span> <span class="s2">&quot;YOUR_CLIENT_ID&quot;</span>
+    <span class="n">client_secret</span> <span class="o">=</span> <span class="s2">&quot;YOUR_CLIENT_SECRET&quot;</span>
+</pre></div>
+</div>
+<p>And then we can run the tests.</p>
+</div>
+<div class="section" id="how-to-use-the-sdk">
+<span id="how-to-use-the-sdk"></span><h2>How to use the SDK<a class="headerlink" href="#how-to-use-the-sdk" title="Permalink to this headline">¶</a></h2>
+<p>First we have to obtain the access token.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kkbox_developer_sdk.auth_flow</span> <span class="k">import</span> <span class="n">KKBOXOAuth</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">KKBOXOAuth</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">CLIENT_SECRET</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="n">fetch_access_token_by_client_credentials</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>After obtaining the access token, you may call APIs like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kkbox_partner_sdk.api</span> <span class="k">import</span> <span class="n">KKBOXAPI</span>
+<span class="n">kkboxapi</span> <span class="o">=</span> <span class="n">KKBOXAPI</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="n">artist_id</span> <span class="o">=</span> <span class="s1">&#39;8q3_xzjl89Yakn_7GB&#39;</span>
+<span class="n">artist</span> <span class="o">=</span> <span class="n">kkboxapi</span><span class="o">.</span><span class="n">artist_fetcher</span><span class="o">.</span><span class="n">fetch_artist</span><span class="p">(</span><span class="n">artist_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generate-the-sdk-documentation">
+<span id="generate-the-sdk-documentation"></span><h2>Generate the SDK documentation<a class="headerlink" href="#generate-the-sdk-documentation" title="Permalink to this headline">¶</a></h2>
+<p>The SDK documentation depends on Sphinx and recommonmark, so first you have to install them.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Sphinx</span> <span class="n">recommonmark</span>
+</pre></div>
+</div>
+<p>Then generate documentation by sphinx:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">-</span><span class="n">o</span> <span class="n">doc</span> <span class="o">-</span><span class="n">f</span> <span class="n">kkbox_developer_sdk</span>
+<span class="n">cd</span> <span class="n">doc</span>
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<div class="section" id="api-documentation">
+<span id="api-documentation"></span><h3><a class="reference external" href="https://kkbox.gelato.io/">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="license">
+<span id="license"></span><h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>Copyright 2017 KKBOX Technologies Limited</p>
+<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>   <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">licenses</span><span class="o">/</span><span class="n">LICENSE</span><span class="o">-</span><span class="mf">2.0</span>
+</pre></div>
+</div>
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">KKBOX OpenAPI SDK for Python</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#test">Test</a></li>
+<li><a class="reference internal" href="#how-to-use-the-sdk">How to use the SDK</a></li>
+<li><a class="reference internal" href="#generate-the-sdk-documentation">Generate the SDK documentation</a><ul>
+<li><a class="reference internal" href="#api-documentation">API Documentation</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">KKBOX Open API Developer SDK</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/README.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="KKBOX Open API Developer SDK"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">KKBOX Open/Partner API  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Sharon Yang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

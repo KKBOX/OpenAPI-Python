@@ -1,0 +1,1111 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>kkbox_developer_sdk package &#8212; KKBOX Open/Partner API  documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">KKBOX Open/Partner API  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="kkbox-developer-sdk-package">
+<h1>kkbox_developer_sdk package<a class="headerlink" href="#kkbox-developer-sdk-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-kkbox_developer_sdk.access_token">
+<span id="kkbox-developer-sdk-access-token-module"></span><h2>kkbox_developer_sdk.access_token module<a class="headerlink" href="#module-kkbox_developer_sdk.access_token" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.access_token.KKBOXAccessToken">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.access_token.</code><code class="descname">KKBOXAccessToken</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.access_token.KKBOXAccessToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>The access token object for accessing KKBOX’s API.</p>
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.access_token.KKBOXAccessToken.access_token">
+<code class="descname">access_token</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.access_token.KKBOXAccessToken.access_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual access token</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.access_token.KKBOXAccessToken.expires_in">
+<code class="descname">expires_in</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.access_token.KKBOXAccessToken.expires_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>The access token expiration date in unix timestamp</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.access_token.KKBOXAccessToken.token_type">
+<code class="descname">token_type</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.access_token.KKBOXAccessToken.token_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The token type</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.access_token.KKBOXAccessToken.scope">
+<code class="descname">scope</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.access_token.KKBOXAccessToken.scope" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scope of the token, may be none</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.access_token.KKBOXAccessToken.refresh_token">
+<code class="descname">refresh_token</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.access_token.KKBOXAccessToken.refresh_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The refresh token</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.album_fetcher">
+<span id="kkbox-developer-sdk-album-fetcher-module"></span><h2>kkbox_developer_sdk.album_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.album_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.album_fetcher.KKBOXAlbumFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.album_fetcher.</code><code class="descname">KKBOXAlbumFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.album_fetcher.KKBOXAlbumFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>Get metadata and tracks of an album.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/albums</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.album_fetcher.KKBOXAlbumFetcher.fetch_album">
+<code class="descname">fetch_album</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.album_fetcher.KKBOXAlbumFetcher.fetch_album" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches an album by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>album_id</strong> (<em>str</em>) – the album ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/albums/endpoints/get-albums-album_id</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.album_fetcher.KKBOXAlbumFetcher.fetch_tracks_in_album">
+<code class="descname">fetch_tracks_in_album</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.album_fetcher.KKBOXAlbumFetcher.fetch_tracks_in_album" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches tracks in an album by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>album_id</strong> (<em>str</em>) – the album ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/albums/endpoints/get-albums-album_id-tracks</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.api">
+<span id="kkbox-developer-sdk-api-module"></span><h2>kkbox_developer_sdk.api module<a class="headerlink" href="#module-kkbox_developer_sdk.api" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.api.</code><code class="descname">KKBOXAPI</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create fetchers.</p>
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.search_fetcher">
+<code class="descname">search_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.search_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The search related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.track_fetcher">
+<code class="descname">track_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.track_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The track related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.artist_fetcher">
+<code class="descname">artist_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.artist_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The artist related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.album_fetcher">
+<code class="descname">album_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.album_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The album related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.shared_playlist_fetcher">
+<code class="descname">shared_playlist_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.shared_playlist_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The shared playlist related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.chart_fetcher">
+<code class="descname">chart_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.chart_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The chart related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.new_release_category_fetcher">
+<code class="descname">new_release_category_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.new_release_category_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The new release category related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.genre_station_fetcher">
+<code class="descname">genre_station_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.genre_station_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The genre station related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.mood_station_fetcher">
+<code class="descname">mood_station_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.mood_station_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mood station related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.feature_playlist_fetcher">
+<code class="descname">feature_playlist_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.feature_playlist_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature playlist related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.feature_playlist_category_fetcher">
+<code class="descname">feature_playlist_category_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.feature_playlist_category_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature playlist category related API fetcher</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.api.KKBOXAPI.new_hits_playlist_fetcher">
+<code class="descname">new_hits_playlist_fetcher</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.api.KKBOXAPI.new_hits_playlist_fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>The new hits playlist related API fetcher</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.artist_fetcher">
+<span id="kkbox-developer-sdk-artist-fetcher-module"></span><h2>kkbox_developer_sdk.artist_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.artist_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.artist_fetcher.</code><code class="descname">KKBOXArtistFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>Get metadata, albums, and top tracks of an artist.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/artists</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher.fetch_artist">
+<code class="descname">fetch_artist</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher.fetch_artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches an artist by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>artist_id</strong> (<em>str</em>) – the artist ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/artists/endpoints/get-artists-artist_id</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher.fetch_albums_of_artist">
+<code class="descname">fetch_albums_of_artist</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher.fetch_albums_of_artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches albums belong to an artist by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>artist_id</strong> (<em>str</em>) – the artist ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/artists/endpoints/get-artists-artist_id-albums</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher.fetch_top_tracks_of_artist">
+<code class="descname">fetch_top_tracks_of_artist</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.artist_fetcher.KKBOXArtistFetcher.fetch_top_tracks_of_artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetcher top tracks belong to an artist by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>artist_id</strong> (<em>str</em>) – the artist ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See ‘<a class="reference external" href="https://kkbox.gelato.io/docs/versions/1.1/resources/artists/endpoints/get-artists-artist_id-top-tracks">https://kkbox.gelato.io/docs/versions/1.1/resources/artists/endpoints/get-artists-artist_id-top-tracks</a>’</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.auth_flow">
+<span id="kkbox-developer-sdk-auth-flow-module"></span><h2>kkbox_developer_sdk.auth_flow module<a class="headerlink" href="#module-kkbox_developer_sdk.auth_flow" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.auth_flow.KKBOXOAuth">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.auth_flow.</code><code class="descname">KKBOXOAuth</code><span class="sig-paren">(</span><em>client_id</em>, <em>client_secret</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.auth_flow.KKBOXOAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements various KKBOX Oauth 2.0 authorization flows.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/authentication</cite>.</p>
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.auth_flow.KKBOXOAuth.OAUTH_TOKEN_URL">
+<code class="descname">OAUTH_TOKEN_URL</code><em class="property"> = 'https://account.kkbox.com/oauth2/token'</em><a class="headerlink" href="#kkbox_developer_sdk.auth_flow.KKBOXOAuth.OAUTH_TOKEN_URL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.auth_flow.KKBOXOAuth.client_id">
+<code class="descname">client_id</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.auth_flow.KKBOXOAuth.client_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The client ID</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.auth_flow.KKBOXOAuth.client_secret">
+<code class="descname">client_secret</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.auth_flow.KKBOXOAuth.client_secret" title="Permalink to this definition">¶</a></dt>
+<dd><p>The client secret</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.auth_flow.KKBOXOAuth.access_token">
+<code class="descname">access_token</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.auth_flow.KKBOXOAuth.access_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The access token</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.auth_flow.KKBOXOAuth.http">
+<code class="descname">http</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.auth_flow.KKBOXOAuth.http" title="Permalink to this definition">¶</a></dt>
+<dd><p>The http client</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.auth_flow.KKBOXOAuth.fetch_access_token_by_client_credentials">
+<code class="descname">fetch_access_token_by_client_credentials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.auth_flow.KKBOXOAuth.fetch_access_token_by_client_credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>There are three ways to let you start using KKBOX’s Open/Partner
+API. The first way among them is to generate a client
+credential to fetch an access token to let KKBOX identify
+you. It allows you to access public data from KKBOX such as
+public albums, playlists and so on.</p>
+<p>However, you cannot use client credentials to access private
+data of a user. You have to let users to log-in into KKBOX and
+grant permissions for you to do so. You cannot use client
+credentials to do media playback either, since it requires a
+Premium Membership.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an access token</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">kkbox_sdk.KKBOXAccessToken</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/authentication</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.chart_fetcher">
+<span id="kkbox-developer-sdk-chart-fetcher-module"></span><h2>kkbox_developer_sdk.chart_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.chart_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.chart_fetcher.KKBOXChartFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.chart_fetcher.</code><code class="descname">KKBOXChartFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.chart_fetcher.KKBOXChartFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>List chart playlist. Then can get tracks via shared playlist.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/charts</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.chart_fetcher.KKBOXChartFetcher.fetch_charts">
+<code class="descname">fetch_charts</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.chart_fetcher.KKBOXChartFetcher.fetch_charts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches chart categories.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terr</strong> – the current territory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/charts/endpoints/get-charts</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.feature_playlist_category_fetcher">
+<span id="kkbox-developer-sdk-feature-playlist-category-fetcher-module"></span><h2>kkbox_developer_sdk.feature_playlist_category_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.feature_playlist_category_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.feature_playlist_category_fetcher.</code><code class="descname">KKBOXFeaturePlaylistCategoryFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>List feature playlist categories and list feature playlists for a specific category.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher.fetch_categories_of_feature_playlist">
+<code class="descname">fetch_categories_of_feature_playlist</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher.fetch_categories_of_feature_playlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches categories of featured playlist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terr</strong> – the current territory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher.fetch_feature_playlist_by_category">
+<code class="descname">fetch_feature_playlist_by_category</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher.fetch_feature_playlist_by_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches featured playlist by given category ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>category</strong> (<em>str</em>) – the category.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories-category_id</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher.fetch_playlists_of_feature_playlist_category">
+<code class="descname">fetch_playlists_of_feature_playlist_category</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.feature_playlist_category_fetcher.KKBOXFeaturePlaylistCategoryFetcher.fetch_playlists_of_feature_playlist_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches playlists of featured playlist category by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>category</strong> (<em>str</em>) – the category.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories-category_id-playlists</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.feature_playlist_fetcher">
+<span id="kkbox-developer-sdk-feature-playlist-fetcher-module"></span><h2>kkbox_developer_sdk.feature_playlist_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.feature_playlist_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.feature_playlist_fetcher.KKBOXFeaturePlaylistFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.feature_playlist_fetcher.</code><code class="descname">KKBOXFeaturePlaylistFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.feature_playlist_fetcher.KKBOXFeaturePlaylistFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>List all featured playlists metadata.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlists</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.feature_playlist_fetcher.KKBOXFeaturePlaylistFetcher.fetch_feature_playlists">
+<code class="descname">fetch_feature_playlists</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.feature_playlist_fetcher.KKBOXFeaturePlaylistFetcher.fetch_feature_playlists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches featured playlists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terr</strong> – the current territory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlists/endpoints/get-featured-playlists</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.fetcher">
+<span id="kkbox-developer-sdk-fetcher-module"></span><h2>kkbox_developer_sdk.fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="kkbox_developer_sdk.fetcher.assert_access_token">
+<code class="descclassname">kkbox_developer_sdk.fetcher.</code><code class="descname">assert_access_token</code><span class="sig-paren">(</span><em>func</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.fetcher.assert_access_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="kkbox_developer_sdk.fetcher.Fetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.fetcher.</code><code class="descname">Fetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.fetcher.Fetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for various fetchers.</p>
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.fetcher.Fetcher.access_token">
+<code class="descname">access_token</code><a class="headerlink" href="#kkbox_developer_sdk.fetcher.Fetcher.access_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.fetcher.Fetcher.http">
+<code class="descname">http</code><em class="property"> = None</em><a class="headerlink" href="#kkbox_developer_sdk.fetcher.Fetcher.http" title="Permalink to this definition">¶</a></dt>
+<dd><p>The http client</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.fetcher.Fetcher.fetch_next_page">
+<code class="descname">fetch_next_page</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.fetcher.Fetcher.fetch_next_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches next page based on previously fetched data.
+Will get the next page url from data[‘paging’][‘next’].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>dict</em>) – previously fetched API response.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.fetcher.Fetcher.fetch_data">
+<code class="descname">fetch_data</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.fetcher.Fetcher.fetch_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches data from specific url.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The response.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.genre_station_fetcher">
+<span id="kkbox-developer-sdk-genre-station-fetcher-module"></span><h2>kkbox_developer_sdk.genre_station_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.genre_station_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.genre_station_fetcher.KKBOXGenreStationFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.genre_station_fetcher.</code><code class="descname">KKBOXGenreStationFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.genre_station_fetcher.KKBOXGenreStationFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>Fetch genre stations and get tracks for a specific genre station.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/genre-stations</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.genre_station_fetcher.KKBOXGenreStationFetcher.fetch_all_genre_stations">
+<code class="descname">fetch_all_genre_stations</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.genre_station_fetcher.KKBOXGenreStationFetcher.fetch_all_genre_stations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches all genre stations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terr</strong> – the current territory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/genre-stations/endpoints/get-genre-stations</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.genre_station_fetcher.KKBOXGenreStationFetcher.fetch_genre_station">
+<code class="descname">fetch_genre_station</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.genre_station_fetcher.KKBOXGenreStationFetcher.fetch_genre_station" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches a genre station by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>station_id</strong> – the station ID</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/genre-stations/endpoints/get-genre-stations-station_id</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.http">
+<span id="kkbox-developer-sdk-http-module"></span><h2>kkbox_developer_sdk.http module<a class="headerlink" href="#module-kkbox_developer_sdk.http" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.http.KKBOXHTTP">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.http.</code><code class="descname">KKBOXHTTP</code><span class="sig-paren">(</span><em>access_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.http.KKBOXHTTP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do request to open api server with authorization header and error catch.</p>
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.http.KKBOXHTTP.USER_AGENT">
+<code class="descname">USER_AGENT</code><em class="property"> = 'KKBOX Open/Partner API Python SDK'</em><a class="headerlink" href="#kkbox_developer_sdk.http.KKBOXHTTP.USER_AGENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.mood_station_fetcher">
+<span id="kkbox-developer-sdk-mood-station-fetcher-module"></span><h2>kkbox_developer_sdk.mood_station_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.mood_station_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.mood_station_fetcher.KKBOXMoodStationFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.mood_station_fetcher.</code><code class="descname">KKBOXMoodStationFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.mood_station_fetcher.KKBOXMoodStationFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>Fetch mood stations and get tracks for a specific mood station.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/mood-stations</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.mood_station_fetcher.KKBOXMoodStationFetcher.fetch_all_mood_stations">
+<code class="descname">fetch_all_mood_stations</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.mood_station_fetcher.KKBOXMoodStationFetcher.fetch_all_mood_stations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches all mood stations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terr</strong> – the current territory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/mood-stations/endpoints/get-mood-stations</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.mood_station_fetcher.KKBOXMoodStationFetcher.fetch_mood_station">
+<code class="descname">fetch_mood_station</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.mood_station_fetcher.KKBOXMoodStationFetcher.fetch_mood_station" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches a mood station by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>station_id</strong> – the station ID</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/mood-stations/endpoints/get-mood-stations-station_id</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.new_hits_playlist_fetcher">
+<span id="kkbox-developer-sdk-new-hits-playlist-fetcher-module"></span><h2>kkbox_developer_sdk.new_hits_playlist_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.new_hits_playlist_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.new_hits_playlist_fetcher.KKBOXNewHitsPlaylistFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.new_hits_playlist_fetcher.</code><code class="descname">KKBOXNewHitsPlaylistFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.new_hits_playlist_fetcher.KKBOXNewHitsPlaylistFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>List all new hits playlists and fetch tracks for specific new hit playlist.</p>
+<p>See ‘<a class="reference external" href="https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists">https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists</a>’.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.new_hits_playlist_fetcher.KKBOXNewHitsPlaylistFetcher.fetch_all_new_hits_playlists">
+<code class="descname">fetch_all_new_hits_playlists</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.new_hits_playlist_fetcher.KKBOXNewHitsPlaylistFetcher.fetch_all_new_hits_playlists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches all new hits playlists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terr</strong> – the current territory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<p>See ‘<a class="reference external" href="https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists/endpoints/get-new-hits-playlists">https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists/endpoints/get-new-hits-playlists</a>’</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.new_hits_playlist_fetcher.KKBOXNewHitsPlaylistFetcher.fetch_new_hits_playlist">
+<code class="descname">fetch_new_hits_playlist</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.new_hits_playlist_fetcher.KKBOXNewHitsPlaylistFetcher.fetch_new_hits_playlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches new hits playlist by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>playlist_id</strong> (<em>str</em>) – the category.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See ‘<a class="reference external" href="https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists/endpoints/get-new-hits-playlists-playlist_id">https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists/endpoints/get-new-hits-playlists-playlist_id</a>’</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.new_release_category_fetcher">
+<span id="kkbox-developer-sdk-new-release-category-fetcher-module"></span><h2>kkbox_developer_sdk.new_release_category_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.new_release_category_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.new_release_category_fetcher.</code><code class="descname">KKBOXNewReleaseCategoryFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>List categories of new release category and get metadata of specific new release category.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher.fetch_all_new_release_categories">
+<code class="descname">fetch_all_new_release_categories</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher.fetch_all_new_release_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches new release categories.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terr</strong> – the current territory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories/endpoints/get-new-release-categories</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher.fetch_new_release_category">
+<code class="descname">fetch_new_release_category</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher.fetch_new_release_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches new release categories by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>category_id</strong> (<em>str</em>) – the station ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories/endpoints/get-new-release-categories-category_id</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher.fetch_albums_of_new_release_category">
+<code class="descname">fetch_albums_of_new_release_category</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.new_release_category_fetcher.KKBOXNewReleaseCategoryFetcher.fetch_albums_of_new_release_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches albums of new release category by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>category_id</strong> (<em>str</em>) – the category ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories/endpoints/get-new-release-categories-category_id-albums</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.search_fetcher">
+<span id="kkbox-developer-sdk-search-fetcher-module"></span><h2>kkbox_developer_sdk.search_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.search_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.search_fetcher.</code><code class="descname">KKBOXSearchTypes</code><a class="headerlink" href="#kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Search types of the search API.</p>
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.ARTIST">
+<code class="descname">ARTIST</code><em class="property"> = 'artist'</em><a class="headerlink" href="#kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.ARTIST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.ALBUM">
+<code class="descname">ALBUM</code><em class="property"> = 'album'</em><a class="headerlink" href="#kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.ALBUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.TRACK">
+<code class="descname">TRACK</code><em class="property"> = 'track'</em><a class="headerlink" href="#kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.TRACK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.PLAYLIST">
+<code class="descname">PLAYLIST</code><em class="property"> = 'playlist'</em><a class="headerlink" href="#kkbox_developer_sdk.search_fetcher.KKBOXSearchTypes.PLAYLIST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="kkbox_developer_sdk.search_fetcher.KKBOXSearchFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.search_fetcher.</code><code class="descname">KKBOXSearchFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.search_fetcher.KKBOXSearchFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>Search API, the types it can search includes artists, albums, tracks, or playlists.
+Default to search all types, use “,” to seperate types if you want to use multiple 
+types to search at the same time.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/search</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.search_fetcher.KKBOXSearchFetcher.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.search_fetcher.KKBOXSearchFetcher.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches within KKBOX’s database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>keyword</strong> (<em>str</em>) – the keyword.</li>
+<li><strong>types</strong> – the search types.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/search/endpoints/get-search</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.shared_playlist_fetcher">
+<span id="kkbox-developer-sdk-shared-playlist-fetcher-module"></span><h2>kkbox_developer_sdk.shared_playlist_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.shared_playlist_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.shared_playlist_fetcher.KKBOXSharedPlaylistFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.shared_playlist_fetcher.</code><code class="descname">KKBOXSharedPlaylistFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.shared_playlist_fetcher.KKBOXSharedPlaylistFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>Fetch metadata and tracks of a specific shared playlist.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/shared-playlists</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.shared_playlist_fetcher.KKBOXSharedPlaylistFetcher.fetch_shared_playlist">
+<code class="descname">fetch_shared_playlist</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.shared_playlist_fetcher.KKBOXSharedPlaylistFetcher.fetch_shared_playlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches a shared playlist by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>playlist_id</strong> (<em>str</em>) – the playlist ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictcd</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/shared-playlists/endpoints/get-shared-playlists-playlist_id</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kkbox_developer_sdk.shared_playlist_fetcher.KKBOXSharedPlaylistFetcher.fetch_tracks_of_shared_playlists">
+<code class="descname">fetch_tracks_of_shared_playlists</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.shared_playlist_fetcher.KKBOXSharedPlaylistFetcher.fetch_tracks_of_shared_playlists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches track list of a playlist by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>playlist_id</strong> (<em>str</em>) – the playlist ID.</li>
+<li><strong>terr</strong> – the current territory.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">API response.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/shared-playlists/endpoints/get-shared-playlists-playlist_id-tracks</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.territory">
+<span id="kkbox-developer-sdk-territory-module"></span><h2>kkbox_developer_sdk.territory module<a class="headerlink" href="#module-kkbox_developer_sdk.territory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.territory.KKBOXTerritory">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.territory.</code><code class="descname">KKBOXTerritory</code><a class="headerlink" href="#kkbox_developer_sdk.territory.KKBOXTerritory" title="Permalink to this definition">¶</a></dt>
+<dd><p>The territory of the KKBOX’s service.</p>
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.territory.KKBOXTerritory.TAIWAN">
+<code class="descname">TAIWAN</code><em class="property"> = 'TW'</em><a class="headerlink" href="#kkbox_developer_sdk.territory.KKBOXTerritory.TAIWAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.territory.KKBOXTerritory.HONGKONG">
+<code class="descname">HONGKONG</code><em class="property"> = 'HK'</em><a class="headerlink" href="#kkbox_developer_sdk.territory.KKBOXTerritory.HONGKONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.territory.KKBOXTerritory.SINGAPORE">
+<code class="descname">SINGAPORE</code><em class="property"> = 'SG'</em><a class="headerlink" href="#kkbox_developer_sdk.territory.KKBOXTerritory.SINGAPORE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.territory.KKBOXTerritory.MALAYSIA">
+<code class="descname">MALAYSIA</code><em class="property"> = 'MA'</em><a class="headerlink" href="#kkbox_developer_sdk.territory.KKBOXTerritory.MALAYSIA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="kkbox_developer_sdk.territory.KKBOXTerritory.JAPAN">
+<code class="descname">JAPAN</code><em class="property"> = 'JP'</em><a class="headerlink" href="#kkbox_developer_sdk.territory.KKBOXTerritory.JAPAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk.track_fetcher">
+<span id="kkbox-developer-sdk-track-fetcher-module"></span><h2>kkbox_developer_sdk.track_fetcher module<a class="headerlink" href="#module-kkbox_developer_sdk.track_fetcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kkbox_developer_sdk.track_fetcher.KKBOXTrackFetcher">
+<em class="property">class </em><code class="descclassname">kkbox_developer_sdk.track_fetcher.</code><code class="descname">KKBOXTrackFetcher</code><span class="sig-paren">(</span><em>access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.track_fetcher.KKBOXTrackFetcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kkbox_developer_sdk.fetcher.Fetcher" title="kkbox_developer_sdk.fetcher.Fetcher"><code class="xref py py-class docutils literal"><span class="pre">kkbox_developer_sdk.fetcher.Fetcher</span></code></a></p>
+<p>Get metadata of a track.</p>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/tracks</cite>.</p>
+<dl class="method">
+<dt id="kkbox_developer_sdk.track_fetcher.KKBOXTrackFetcher.fetch_track">
+<code class="descname">fetch_track</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#kkbox_developer_sdk.track_fetcher.KKBOXTrackFetcher.fetch_track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches a song track by given ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>track_id</strong> (<em>str</em>) – the track ID.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">API response.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+<p>See <cite>https://kkbox.gelato.io/docs/versions/1.1/resources/tracks/endpoints/get-tracks-track_id</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-kkbox_developer_sdk">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kkbox_developer_sdk" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">kkbox_developer_sdk package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.access_token">kkbox_developer_sdk.access_token module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.album_fetcher">kkbox_developer_sdk.album_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.api">kkbox_developer_sdk.api module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.artist_fetcher">kkbox_developer_sdk.artist_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.auth_flow">kkbox_developer_sdk.auth_flow module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.chart_fetcher">kkbox_developer_sdk.chart_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.feature_playlist_category_fetcher">kkbox_developer_sdk.feature_playlist_category_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.feature_playlist_fetcher">kkbox_developer_sdk.feature_playlist_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.fetcher">kkbox_developer_sdk.fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.genre_station_fetcher">kkbox_developer_sdk.genre_station_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.http">kkbox_developer_sdk.http module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.mood_station_fetcher">kkbox_developer_sdk.mood_station_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.new_hits_playlist_fetcher">kkbox_developer_sdk.new_hits_playlist_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.new_release_category_fetcher">kkbox_developer_sdk.new_release_category_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.search_fetcher">kkbox_developer_sdk.search_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.shared_playlist_fetcher">kkbox_developer_sdk.shared_playlist_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.territory">kkbox_developer_sdk.territory module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk.track_fetcher">kkbox_developer_sdk.track_fetcher module</a></li>
+<li><a class="reference internal" href="#module-kkbox_developer_sdk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/kkbox_developer_sdk.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">KKBOX Open/Partner API  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Sharon Yang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>
