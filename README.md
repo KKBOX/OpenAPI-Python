@@ -3,11 +3,11 @@
 The SDK is for accessing various metadata of KKBOX tracks, albums, artist, playlists and stations.
 
 ### Installation
-1. Source installation
+Source installation
 
     [sudo] python setup.py install
 
-1. Pypi installation
+Pypi installation
     
     pip install kkbox-developer-sdk
 
