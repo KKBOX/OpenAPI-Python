@@ -40,10 +40,14 @@ After obtaining the access token, you may call APIs like this:
 	artist_id = '8q3_xzjl89Yakn_7GB'
 	artist = kkboxapi.artist_fetcher.fetch_artist(artist_id)
 
-## Generate the SDK documentation
-The SDK documentation depends on Sphinx and recommonmark, so first you have to install them.
+### SDK Documentation
 
-	pip install Sphinx recommonmark
+Please browse [https://kkbox.github.io/OpenAPI-Python/](https://kkbox.github.io/OpenAPI-Python/)
+
+## Generate the SDK documentation
+The SDK documentation depends on Sphinx, recommonmark and sphinx-rtd-theme, so first you have to install them.
+
+	pip install Sphinx recommonmark sphinx-rtd-theme
 
 Then generate documentation by sphinx:
 
