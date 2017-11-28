@@ -1,6 +1,6 @@
 # KKBOX OpenAPI SDK for Python
 
-[![License Apache 2.0](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/zonble/OpenAPI-Python/master/LICENSE.txt)
+[![License Apache 2.0](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/KKBOX/OpenAPI-Python/master/LICENSE.txt)
 [![pypi](https://img.shields.io/pypi/v/kkbox-developer-sdk/.svg)](https://pypi.python.org/pypi/kkbox-developer-sdk/)
 [![pypi](https://img.shields.io/pypi/dm/kkbox-developer-sdk/.svg)](https://pypi.python.org/pypi/kkbox-developer-sdk/)
 
