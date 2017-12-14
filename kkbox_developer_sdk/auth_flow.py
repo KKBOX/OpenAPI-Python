@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
-from http import *
-from access_token import *
+from .http import *
+from .access_token import *
 
 class KKBOXOAuth:
     '''

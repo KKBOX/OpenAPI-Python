@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from auth_flow import *
-from track_fetcher import *
-from artist_fetcher import *
-from album_fetcher import *
-from shared_playlist_fetcher import *
-from search_fetcher import *
-from chart_fetcher import *
-from new_release_category_fetcher import *
-from genre_station_fetcher import *
-from mood_station_fetcher import *
-from feature_playlist_fetcher import *
-from feature_playlist_category_fetcher import *
-from new_hits_playlist_fetcher import *
+from .auth_flow import *
+from .track_fetcher import *
+from .artist_fetcher import *
+from .album_fetcher import *
+from .shared_playlist_fetcher import *
+from .search_fetcher import *
+from .chart_fetcher import *
+from .new_release_category_fetcher import *
+from .genre_station_fetcher import *
+from .mood_station_fetcher import *
+from .feature_playlist_fetcher import *
+from .feature_playlist_category_fetcher import *
+from .new_hits_playlist_fetcher import *
 
 
 class KKBOXAPI:
