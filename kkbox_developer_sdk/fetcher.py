@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from http import *
+from .http import *
 
 def assert_access_token(func, *args):
         @functools.wraps(func)

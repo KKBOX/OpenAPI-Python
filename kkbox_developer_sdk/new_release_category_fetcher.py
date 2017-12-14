@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
-from fetcher import *
-from territory import *
+from .fetcher import *
+from .territory import *
 
 class KKBOXNewReleaseCategoryFetcher(Fetcher):
     '''
