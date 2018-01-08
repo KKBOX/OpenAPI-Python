@@ -29,7 +29,7 @@ class KKBOXNewHitsPlaylistFetcher(Fetcher):
         '''
         Fetches new hits playlist by given ID.
 
-        :param playlist_id: the category.
+        :param playlist_id: the playlist ID.
         :type playlist_id: str
         :param terr: the current territory.
         :return: API response.
@@ -38,5 +38,22 @@ class KKBOXNewHitsPlaylistFetcher(Fetcher):
         See 'https://kkbox.gelato.io/docs/versions/1.1/resources/new-hits-playlists/endpoints/get-new-hits-playlists-playlist_id'
         '''
         url = 'https://api.kkbox.com/v1.1/new-hits-playlists/%s' % playlist_id
+        url += '?' + url_parse.urlencode({'territory': terr})
+        return self.http._post_data(url, None, self.http._headers_with_access_token())
+
+    @assert_access_token
+    def fetch_new_hits_playlist_tracks(self, playlist_id, terr= KKBOXTerritory.TAIWAN):
+        '''
+        Fetches new hits playlist by given ID.
+
+        :param playlist_id: the playlist ID.
+        :type playlist_id: str
+        :param terr: the current territory.
+        :return: API response.
+        :rtype: dict
+
+        See 'https://docs-en.kkbox.codes/v1.1/reference#newhitsplaylists-playlist_id-tracks'
+        '''
+        url = 'https://api.kkbox.com/v1.1/new-hits-playlists/%s/tracks' % playlist_id
         url += '?' + url_parse.urlencode({'territory': terr})
         return self.http._post_data(url, None, self.http._headers_with_access_token())
