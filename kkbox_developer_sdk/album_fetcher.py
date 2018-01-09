@@ -7,7 +7,7 @@ class KKBOXAlbumFetcher(Fetcher):
     '''
     Get metadata and tracks of an album.
     
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/albums`. 
+    See `https://docs-en.kkbox.codes/v1.1/reference#albums`. 
     '''
     @assert_access_token
     def fetch_album(self, album_id, terr=KKBOXTerritory.TAIWAN):
@@ -20,7 +20,7 @@ class KKBOXAlbumFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/albums/endpoints/get-albums-album_id`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#albums-album_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/albums/%s' % album_id
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -37,7 +37,7 @@ class KKBOXAlbumFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/albums/endpoints/get-albums-album_id-tracks`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#albums-album_id-tracks`.
         '''
         url = 'https://api.kkbox.com/v1.1/albums/%s/tracks' % album_id
         url += '?' + url_parse.urlencode({'territory': terr})

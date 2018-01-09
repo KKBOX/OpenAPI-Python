@@ -7,7 +7,7 @@ class KKBOXChartFetcher(Fetcher):
     '''
     List chart playlist. Then can get tracks via shared playlist.
 
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/charts`.
+    See `https://docs-en.kkbox.codes/v1.1/reference#charts`.
     '''
     @assert_access_token
     def fetch_charts(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXChartFetcher(Fetcher):
         :return: API response.
         :rtype: list
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/charts/endpoints/get-charts`
+        See `https://docs-en.kkbox.codes/v1.1/reference#charts_1`
         '''
         url = 'https://api.kkbox.com/v1.1/charts'
         url += '?' + url_parse.urlencode({'territory': terr})

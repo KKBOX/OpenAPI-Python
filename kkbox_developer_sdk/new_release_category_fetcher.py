@@ -7,7 +7,7 @@ class KKBOXNewReleaseCategoryFetcher(Fetcher):
     '''
     List categories of new release category and get metadata of specific new release category.
 
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories`.
+    See `https://docs-en.kkbox.codes/v1.1/reference#new-release-categories`.
     '''
     @assert_access_token
     def fetch_all_new_release_categories(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXNewReleaseCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: list
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories/endpoints/get-new-release-categories`
+        See `https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories`
         '''
         url = 'https://api.kkbox.com/v1.1/new-release-categories'
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -35,7 +35,7 @@ class KKBOXNewReleaseCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: list
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories/endpoints/get-new-release-categories-category_id`
+        See `https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories-category_id`
         '''
         url = 'https://api.kkbox.com/v1.1/new-release-categories/%s' % category_id
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -52,7 +52,7 @@ class KKBOXNewReleaseCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: list
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/new-release-categories/endpoints/get-new-release-categories-category_id-albums`
+        See `https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories-category_id-albums`
         '''
         url = 'https://api.kkbox.com/v1.1/new-release-categories/%s/albums' % category_id
         url += '?' + url_parse.urlencode({'territory': terr})

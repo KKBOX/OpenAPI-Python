@@ -7,7 +7,7 @@ class KKBOXArtistFetcher(Fetcher):
     '''
     Get metadata, albums, and top tracks of an artist.
 
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/artists`.
+    See `https://docs-en.kkbox.codes/v1.1/reference#artists`.
     '''
     @assert_access_token
     def fetch_artist(self, artist_id, terr=KKBOXTerritory.TAIWAN):
@@ -20,7 +20,7 @@ class KKBOXArtistFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/artists/endpoints/get-artists-artist_id`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/artists/%s' % artist_id
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -37,7 +37,7 @@ class KKBOXArtistFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/artists/endpoints/get-artists-artist_id-albums`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-albums`.
         '''
         url = 'https://api.kkbox.com/v1.1/artists/%s/albums' % artist_id
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -54,7 +54,7 @@ class KKBOXArtistFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See 'https://kkbox.gelato.io/docs/versions/1.1/resources/artists/endpoints/get-artists-artist_id-top-tracks'
+        See 'https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-toptracks'
         '''
         url = 'https://api.kkbox.com/v1.1/artists/%s/top-tracks' % artist_id
         url += '?' + url_parse.urlencode({'territory': terr})

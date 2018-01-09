@@ -391,14 +391,34 @@ class TestAPISDK(unittest.TestCase):
         for track in station['tracks']['data']:
             self._validate_track(track)
 
-    def test_fetch_feature_playlists(self):
+    def test_fetch_all_feature_playlists(self):
         auth = KKBOXOAuth(CLIENT_ID, CLIENT_SECRET)
         token = auth.fetch_access_token_by_client_credentials()
         fetcher = KKBOXFeaturePlaylistFetcher(token)
-        feature_playlists = fetcher.fetch_feature_playlists()
+        feature_playlists = fetcher.fetch_all_feature_playlists()
         self._validate_playlist_paging(feature_playlists)
         next_page_data = fetcher.fetch_next_page(feature_playlists)
         self._validate_playlist_paging(next_page_data)
+
+    def test_fetch_feature_playlist(self):
+        auth = KKBOXOAuth(CLIENT_ID, CLIENT_SECRET)
+        token = auth.fetch_access_token_by_client_credentials()
+        fetcher = KKBOXFeaturePlaylistFetcher(token)
+        playlist_id = 'Wt95My35CqR9hB_FW1'
+        feature_playlist = fetcher.fetch_feature_playlist(playlist_id)
+        self._validate_playlist(feature_playlist)
+        next_page_data = fetcher.fetch_next_page(feature_playlist['tracks'])
+        self._validate_track_paging(next_page_data)
+
+    def test_fetch_feature_playlist_tracks(self):
+        auth = KKBOXOAuth(CLIENT_ID, CLIENT_SECRET)
+        token = auth.fetch_access_token_by_client_credentials()
+        fetcher = KKBOXFeaturePlaylistFetcher(token)
+        playlist_id = 'Wt95My35CqR9hB_FW1'
+        feature_playlist = fetcher.fetch_feature_playlist_tracks(playlist_id)
+        self._validate_track_paging(feature_playlist)
+        next_page_data = fetcher.fetch_next_page(feature_playlist)
+        self._validate_track_paging(next_page_data)
 
     def test_fetch_categories_of_feature_playlist(self):
         auth = KKBOXOAuth(CLIENT_ID, CLIENT_SECRET)

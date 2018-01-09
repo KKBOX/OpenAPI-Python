@@ -7,7 +7,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
     '''
     List feature playlist categories and list feature playlists for a specific category.
 
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories`.
+    See `https://docs-en.kkbox.codes/v1.1/reference#featured-playlist-categories`.
     '''
     @assert_access_token
     def fetch_categories_of_feature_playlist(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories`.
         '''
         url = 'https://api.kkbox.com/v1.1/featured-playlist-categories'
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -35,7 +35,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories-category_id`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/featured-playlist-categories/%s' % category_id
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -52,7 +52,7 @@ class KKBOXFeaturePlaylistCategoryFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/featured-playlist-categories/endpoints/get-featured-playlist-categories-category_id-playlists`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id-playlists`.
         '''
         url = 'https://api.kkbox.com/v1.1/featured-playlist-categories/%s/playlists' % category_id
         url += '?' + url_parse.urlencode({'territory': terr})

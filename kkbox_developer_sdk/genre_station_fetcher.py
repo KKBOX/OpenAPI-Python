@@ -7,7 +7,7 @@ class KKBOXGenreStationFetcher(Fetcher):
     '''
     Fetch genre stations and get tracks for a specific genre station.
 
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/genre-stations`.
+    See `https://docs-en.kkbox.codes/v1.1/reference#genre-stations`.
     '''
     @assert_access_token
     def fetch_all_genre_stations(self, terr=KKBOXTerritory.TAIWAN):
@@ -18,7 +18,7 @@ class KKBOXGenreStationFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/genre-stations/endpoints/get-genre-stations`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#genrestations`.
         '''
         url = 'https://api.kkbox.com/v1.1/genre-stations'
         url += '?' + url_parse.urlencode({'territory': terr})
@@ -34,7 +34,7 @@ class KKBOXGenreStationFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/genre-stations/endpoints/get-genre-stations-station_id`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#genrestations-station_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/genre-stations/%s' % station_id
         url += '?' + url_parse.urlencode({'territory': terr})

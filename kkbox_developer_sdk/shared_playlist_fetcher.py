@@ -7,7 +7,7 @@ class KKBOXSharedPlaylistFetcher(Fetcher):
     '''
     Fetch metadata and tracks of a specific shared playlist.
 
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/shared-playlists`.
+    See `https://docs-en.kkbox.codes/v1.1/reference#shared-playlists`.
     '''
     @assert_access_token
     def fetch_shared_playlist(self, playlist_id, terr=KKBOXTerritory.TAIWAN):
@@ -20,7 +20,7 @@ class KKBOXSharedPlaylistFetcher(Fetcher):
         :return: API response.
         :rtype: dictcd
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/shared-playlists/endpoints/get-shared-playlists-playlist_id`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id`.
         '''
         url = 'https://api.kkbox.com/v1.1/shared-playlists/%s' % playlist_id
         url += '?' + url_parse.urlencode({'territory': terr})

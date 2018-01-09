@@ -18,7 +18,7 @@ class KKBOXSearchFetcher(Fetcher):
     Default to search all types, use "," to seperate types if you want to use multiple 
     types to search at the same time.
 
-    See `https://kkbox.gelato.io/docs/versions/1.1/resources/search`.
+    See `https://docs-en.kkbox.codes/v1.1/reference#search`.
     '''
     @assert_access_token
     def search(self, keyword, types=[], terr=KKBOXTerritory.TAIWAN):
@@ -33,7 +33,7 @@ class KKBOXSearchFetcher(Fetcher):
         :return: API response.
         :rtype: dict
 
-        See `https://kkbox.gelato.io/docs/versions/1.1/resources/search/endpoints/get-search`.
+        See `https://docs-en.kkbox.codes/v1.1/reference#search_1`.
         '''
         url = 'https://api.kkbox.com/v1.1/search'
         url += '?' + url_parse.urlencode({'q': keyword, 'territory': terr})
