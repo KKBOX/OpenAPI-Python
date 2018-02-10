@@ -50,6 +50,8 @@ Once the access token is obtained, we may call APIs like this:
 
 Documentation of the SDK is available at https://kkbox.github.io/OpenAPI-Python/ .
 
+To get started, visit [Beginner's Guide for Python Developers](https://docs-en.kkbox.codes/docs/beginners-guide-for-python-developers).
+
 ## Documentation Generation
 
 We use Sphinx, recommonmark and sphinx-rtd-theme to build the documentation of the SDK. Thus, you need to install these tools by the following command.
