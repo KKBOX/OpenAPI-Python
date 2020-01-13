@@ -52,8 +52,7 @@ class KKBOXOAuth:
         client_credentials = client_credentials.decode('utf-8')
         headers = {'Authorization': 'Basic ' + client_credentials,
                    'Content-type': 'application/x-www-form-urlencoded'}
-        post_parameters = {'grant_type': 'client_credentials',
-                           'scope': 'user_profile user_territory'}
+        post_parameters = {'grant_type': 'client_credentials'}
         json_object = self.http._post_data(KKBOXOAuth.OAUTH_TOKEN_URL, post_parameters,
                                       headers)
         self.access_token = KKBOXAccessToken(**json_object)
